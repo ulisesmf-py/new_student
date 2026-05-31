@@ -10,31 +10,31 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--black);min-height:100vh;-webkit-font-smoothing:antialiased}
 
-  /* ── LOGIN ── */
-  #login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#fafafa;position:relative;overflow:hidden}
-  #particle-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-  .login-card{width:100%;max-width:400px;animation:fadeUp .5s ease both;position:relative;z-index:1;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,.07);border-radius:24px;padding:40px 36px;box-shadow:0 8px 40px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.04)}
-  .login-brand{text-align:center;margin-bottom:36px}
+  /* LOGIN */
+  #login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#fff;position:relative;overflow:hidden}
+  #fog-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+  .login-card{width:100%;max-width:400px;animation:fadeUp .5s ease both;position:relative;z-index:1;background:rgba(255,255,255,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(0,0,0,.06);border-radius:24px;padding:40px 36px;box-shadow:0 8px 48px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.03)}
+  .login-brand{text-align:center;margin-bottom:32px}
   .login-brand a{text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:10px}
-  .login-brand img{width:88px;height:88px;object-fit:contain;transition:transform var(--t)}
+  .login-brand img{width:86px;height:86px;object-fit:contain;transition:transform var(--t)}
   .login-brand a:hover img{transform:scale(1.04)}
   .login-brand-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:var(--black);letter-spacing:.04em}
-  .login-title{font-size:22px;font-weight:700;letter-spacing:-.4px;margin-bottom:4px;text-align:center}
-  .login-sub{font-size:14px;color:var(--gray-500);margin-bottom:28px;text-align:center}
+  .login-title{font-size:21px;font-weight:700;letter-spacing:-.4px;margin-bottom:4px;text-align:center}
+  .login-sub{font-size:14px;color:var(--gray-500);margin-bottom:26px;text-align:center}
   .field-group{margin-bottom:14px;position:relative}
-  .field-label{display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase}
-  .field-input{width:100%;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);color:var(--black);transition:border-color var(--t),box-shadow var(--t);outline:none}
+  .field-label{display:block;font-size:11px;font-weight:600;color:var(--gray-700);margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase}
+  .field-input{width:100%;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;background:rgba(249,249,249,.8);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);color:var(--black);transition:border-color var(--t),box-shadow var(--t);outline:none}
   .field-input:focus{border-color:var(--black);background:var(--white);box-shadow:0 0 0 3px rgba(10,10,10,.06)}
-
-  /* Email split input */
   .email-split{display:flex;gap:0}
   .email-split .field-input{border-radius:var(--radius-sm) 0 0 var(--radius-sm);border-right:none;flex:1;min-width:0}
-  .email-domain{display:flex;align-items:center;padding:0 14px;background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:var(--gray-500);font-family:'DM Mono',monospace;white-space:nowrap;transition:border-color var(--t)}
+  .email-domain{display:flex;align-items:center;padding:0 12px;background:rgba(242,242,242,.8);border:1.5px solid var(--gray-200);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:13px;color:var(--gray-500);font-family:'DM Mono',monospace;white-space:nowrap;transition:border-color var(--t)}
   .email-split:focus-within .email-domain{border-color:var(--black)}
-
+  .remember-row{display:flex;align-items:center;gap:8px;margin:4px 0 8px;cursor:pointer;user-select:none}
+  .remember-row input{width:15px;height:15px;accent-color:var(--black);cursor:pointer}
+  .remember-row span{font-size:13px;color:var(--gray-600)}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all var(--t);white-space:nowrap}
   .btn:disabled{opacity:.5;cursor:not-allowed}
-  .btn-primary{background:var(--black);color:var(--white);width:100%;margin-top:8px;padding:14px;font-size:15px}
+  .btn-primary{background:var(--black);color:var(--white);width:100%;margin-top:6px;padding:14px;font-size:15px}
   .btn-primary:hover:not(:disabled){background:var(--gray-700);transform:translateY(-1px);box-shadow:var(--shadow-md)}
   .btn-secondary{background:var(--gray-100);color:var(--gray-700)}
   .btn-secondary:hover:not(:disabled){background:var(--gray-200)}
@@ -45,7 +45,16 @@
   .btn-icon{width:36px;height:36px;padding:0;border-radius:var(--radius-xs)}
   .login-error{background:var(--danger-light);color:var(--danger);border-radius:var(--radius-xs);padding:10px 14px;font-size:13px;margin-top:10px;display:none}
 
-  /* ── APP ── */
+  /* Welcome overlay */
+  #welcome-overlay{position:fixed;inset:0;background:#fff;display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;z-index:999;animation:fadeIn .3s ease}
+  #welcome-overlay.show{display:flex}
+  .welcome-logo{width:80px;height:80px;object-fit:contain;animation:pulseIn .6s ease both}
+  .welcome-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;letter-spacing:.12em;color:var(--black);animation:fadeUp .7s .2s ease both;opacity:0;animation-fill-mode:both}
+  .welcome-sub{font-size:14px;color:var(--gray-400);letter-spacing:.06em;text-transform:uppercase;animation:fadeUp .7s .4s ease both;opacity:0;animation-fill-mode:both}
+  @keyframes pulseIn{0%{transform:scale(.7);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* APP */
   #app-screen{display:none;min-height:100vh}
   .header{background:var(--white);border-bottom:1px solid var(--gray-200);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
   .header-left{display:flex;align-items:center;gap:14px}
@@ -61,76 +70,59 @@
   .teacher-email{font-size:12px;color:var(--gray-600);font-weight:500;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .btn-logout{padding:6px 14px;font-size:13px;background:var(--gray-100);color:var(--gray-700);border-radius:var(--radius-xs);font-weight:500;border:none;cursor:pointer}
   .btn-logout:hover{background:var(--gray-200)}
-
   .main{max-width:1100px;margin:0 auto;padding:36px 32px}
   .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
   .topbar-left h1{font-size:28px;font-weight:700;letter-spacing:-.7px;line-height:1.1}
   .topbar-left p{font-size:14px;color:var(--gray-500);margin-top:3px}
   .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-
-  /* Search */
   .search-bar{position:relative;min-width:220px;max-width:340px;flex:1}
   .search-bar input{width:100%;padding:10px 16px 10px 40px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--black);outline:none;transition:border-color var(--t),box-shadow var(--t)}
   .search-bar input:focus{border-color:var(--black);box-shadow:0 0 0 3px rgba(10,10,10,.06)}
   .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);pointer-events:none}
-
-  /* Materia filter pills */
+  .sort-select{padding:9px 12px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--gray-700);outline:none;cursor:pointer}
   .filter-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
-  .filter-label{font-size:12px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-right:4px}
+  .filter-label{font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-right:4px}
   .filter-pill{padding:5px 14px;border-radius:999px;border:1.5px solid var(--gray-200);background:var(--white);font-size:13px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all var(--t);font-family:'DM Sans',sans-serif}
   .filter-pill:hover{border-color:var(--gray-400);color:var(--black)}
   .filter-pill.active{background:var(--black);color:var(--white);border-color:var(--black)}
-
-  /* Stats */
   .stats-bar{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
   .stat-chip{padding:6px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:999px;font-size:13px;color:var(--gray-600);font-weight:500;display:flex;align-items:center;gap:6px}
   .stat-chip strong{color:var(--black);font-weight:700}
-
-  /* Empty */
   .empty-state{text-align:center;padding:80px 20px;display:none}
   .empty-state h3{font-size:20px;font-weight:600;color:var(--gray-500);margin-bottom:8px}
   .empty-state p{font-size:14px;color:var(--gray-400)}
-
-  /* Grid */
   .students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:14px}
   .student-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;transition:box-shadow var(--t),transform var(--t);animation:fadeUp .3s ease both}
   .student-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-  .card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
   .student-avatar{width:44px;height:44px;background:var(--black);color:var(--white);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0}
   .student-info{flex:1;min-width:0}
   .student-name{font-size:15px;font-weight:700;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .student-email{font-size:11px;color:var(--gray-400);font-family:'DM Mono',monospace;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .materia-badge{display:inline-flex;align-items:center;padding:3px 10px;background:var(--gray-100);border-radius:999px;font-size:11px;font-weight:600;color:var(--gray-600);margin-bottom:12px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .materia-badge.no-materia{color:var(--gray-400);background:transparent;border:1px dashed var(--gray-300)}
+  .materias-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;min-height:20px}
+  .mtag{display:inline-flex;align-items:center;padding:2px 9px;background:var(--gray-100);border-radius:999px;font-size:11px;font-weight:600;color:var(--gray-600)}
+  .mtag.empty{color:var(--gray-400);background:transparent;border:1px dashed var(--gray-300)}
   .card-password{display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-xs);padding:8px 12px;margin-bottom:12px}
   .password-label{font-size:10px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
   .password-value{font-family:'DM Mono',monospace;font-size:13px;color:var(--gray-700);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .card-actions{display:flex;gap:6px}
   .card-actions .btn{flex:1;font-size:12px;padding:8px 10px}
-
-  /* Spinner */
   .spinner{width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;display:none}
   .spinner.dark{border:2px solid rgba(0,0,0,.15);border-top-color:var(--black)}
   .page-loading{display:flex;align-items:center;justify-content:center;padding:80px}
-
-  /* Modal */
-  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
   .modal-overlay.open{display:flex}
-  .modal{background:var(--white);border-radius:var(--radius);width:100%;max-width:460px;box-shadow:var(--shadow-lg);animation:scaleUp .25s cubic-bezier(.34,1.56,.64,1) both;overflow:hidden}
+  .modal{background:var(--white);border-radius:var(--radius);width:100%;max-width:480px;box-shadow:var(--shadow-lg);animation:scaleUp .25s cubic-bezier(.34,1.56,.64,1) both;overflow:hidden}
   .modal-header{padding:22px 22px 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
   .modal-title{font-size:19px;font-weight:700;letter-spacing:-.3px}
   .modal-body{padding:0 22px}
   .modal-footer{padding:18px 22px 22px;display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
   .modal-footer .btn{min-width:100px}
   .email-suffix{font-size:12px;color:var(--gray-400);margin-top:4px;font-family:'DM Mono',monospace}
-
-  /* Materias en modal */
-  .materias-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-  .materia-btn{padding:5px 14px;border-radius:999px;border:1.5px solid var(--gray-200);background:var(--white);font-size:13px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all var(--t);font-family:'DM Sans',sans-serif}
-  .materia-btn:hover{border-color:var(--gray-400);color:var(--black)}
-  .materia-btn.sel{background:var(--black);color:var(--white);border-color:var(--black)}
-
-  /* Confirm */
+  .materias-selector{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .msel-btn{padding:5px 14px;border-radius:999px;border:1.5px solid var(--gray-200);background:var(--white);font-size:13px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all var(--t);font-family:'DM Sans',sans-serif}
+  .msel-btn:hover{border-color:var(--gray-400);color:var(--black)}
+  .msel-btn.sel{background:var(--black);color:var(--white);border-color:var(--black)}
   .confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);z-index:250;display:none;align-items:center;justify-content:center;padding:24px}
   .confirm-overlay.open{display:flex}
   .confirm-box{background:var(--white);border-radius:var(--radius);padding:30px;max-width:360px;width:100%;box-shadow:var(--shadow-lg);animation:scaleUp .2s ease both;text-align:center}
@@ -139,38 +131,32 @@
   .confirm-msg{font-size:14px;color:var(--gray-500);margin-bottom:22px;line-height:1.6}
   .confirm-actions{display:flex;gap:10px;justify-content:center}
   .confirm-actions .btn{min-width:110px}
-
-  /* Toast */
   .toast-container{position:fixed;bottom:24px;right:24px;z-index:300;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
   .toast{padding:11px 16px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;box-shadow:var(--shadow-md);animation:slideInRight .3s ease both;display:flex;align-items:center;gap:8px;max-width:300px}
   .toast-success{background:var(--black);color:var(--white)}
   .toast-error{background:var(--danger);color:var(--white)}
   .toast-info{background:var(--gray-700);color:var(--white)}
   .toast.hide{animation:slideOutRight .3s ease both}
-
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes scaleUp{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
   @keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
   @keyframes slideOutRight{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(20px)}}
   @keyframes spin{to{transform:rotate(360deg)}}
-
-  @media(max-width:640px){
-    .header{padding:0 16px}
-    .main{padding:24px 16px}
-    .topbar{flex-direction:column}
-    .topbar-right{width:100%}
-    .search-bar{max-width:100%}
-    .teacher-email{display:none}
-    .header-title{display:none}
-    .header-brand-name{display:none}
-  }
+  @media(max-width:640px){.header{padding:0 16px}.main{padding:24px 16px}.topbar{flex-direction:column}.topbar-right{width:100%}.search-bar{max-width:100%}.teacher-email{display:none}.header-title{display:none}.header-brand-name{display:none}}
 </style>
 </head>
 <body>
 
-<!-- ── LOGIN ── -->
+<!-- WELCOME OVERLAY -->
+<div id="welcome-overlay">
+  <img class="welcome-logo" src="https://firebasestorage.googleapis.com/v0/b/foro-ee8a5.firebasestorage.app/o/BLACK%20AI%2FBlack-IA-Saber-Minimalista-(black-version).png?alt=media&token=8f589ca0-16b5-4869-ba95-c28141cb5040" alt="Black IA">
+  <div class="welcome-text">WELCOME TO AI</div>
+  <div class="welcome-sub">Portal Docentes</div>
+</div>
+
+<!-- LOGIN -->
 <div id="login-screen">
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="fog-canvas"></canvas>
   <div class="login-card">
     <div class="login-brand">
       <a href="https://black-ai.pages.dev/" target="_blank" rel="noopener">
@@ -180,7 +166,6 @@
     </div>
     <div class="login-title">Portal Docentes</div>
     <div class="login-sub">Acceso exclusivo para profesores</div>
-
     <div class="field-group">
       <label class="field-label">Usuario</label>
       <div class="email-split">
@@ -192,6 +177,10 @@
       <label class="field-label">Contraseña</label>
       <input type="password" id="login-password" class="field-input" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')window.doLogin()">
     </div>
+    <label class="remember-row">
+      <input type="checkbox" id="remember-me">
+      <span>Mantener sesión iniciada</span>
+    </label>
     <div id="login-error" class="login-error"></div>
     <button id="login-btn" class="btn btn-primary" onclick="doLogin()">
       <span id="login-label">Iniciar sesión</span>
@@ -200,7 +189,7 @@
   </div>
 </div>
 
-<!-- ── APP ── -->
+<!-- APP -->
 <div id="app-screen">
   <header class="header">
     <div class="header-left">
@@ -219,7 +208,6 @@
       <button class="btn-logout" onclick="doLogout()">Salir</button>
     </div>
   </header>
-
   <main class="main">
     <div class="topbar">
       <div class="topbar-left">
@@ -227,9 +215,16 @@
         <p>Gestiona las cuentas de todos los estudiantes</p>
       </div>
       <div class="topbar-right">
+        <select class="sort-select" id="sort-select" onchange="applyFilters()">
+          <option value="name">Ordenar: Nombre A-Z</option>
+          <option value="name-desc">Nombre Z-A</option>
+          <option value="recent">Más recientes</option>
+          <option value="oldest">Más antiguos</option>
+          <option value="materias">Más materias</option>
+        </select>
         <div class="search-bar">
           <svg class="search-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="search-input" placeholder="Nombre, usuario, materia…" oninput="applyFilters()">
+          <input type="text" id="search-input" placeholder="Nombre, usuario, materia, docente…" oninput="applyFilters()">
         </div>
         <button class="btn btn-primary" style="white-space:nowrap;padding:10px 16px;font-size:13px;margin-top:0;width:auto" onclick="openCreateModal()">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
@@ -237,13 +232,10 @@
         </button>
       </div>
     </div>
-
-    <!-- Filtros por materia -->
-    <div class="filter-bar" id="filter-bar">
+    <div class="filter-bar" id="filter-bar" style="display:none">
       <span class="filter-label">Materia</span>
-      <button class="filter-pill active" data-materia="" onclick="setMateriaFilter(this,'')">Todas</button>
+      <button class="filter-pill active" onclick="setMateriaFilter(this,'')">Todas</button>
     </div>
-
     <div class="stats-bar">
       <div class="stat-chip">
         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -254,27 +246,18 @@
         <strong id="count-filtered">0</strong> resultado(s)
       </div>
     </div>
-
-    <div id="loading-state" class="page-loading">
-      <div class="spinner dark" style="display:block;width:30px;height:30px;border-width:3px"></div>
-    </div>
-    <div id="empty-state" class="empty-state">
-      <div style="font-size:44px;margin-bottom:14px;opacity:.35">👥</div>
-      <h3 id="empty-title">Sin alumnos aún</h3>
-      <p id="empty-msg">Crea el primer alumno con el botón de arriba</p>
-    </div>
+    <div id="loading-state" class="page-loading"><div class="spinner dark" style="display:block;width:30px;height:30px;border-width:3px"></div></div>
+    <div id="empty-state" class="empty-state"><div style="font-size:44px;margin-bottom:14px;opacity:.35">👥</div><h3 id="empty-title">Sin alumnos aún</h3><p id="empty-msg">Crea el primer alumno con el botón de arriba</p></div>
     <div id="students-grid" class="students-grid"></div>
   </main>
 </div>
 
-<!-- ── MODAL CREAR/EDITAR ── -->
+<!-- MODAL -->
 <div class="modal-overlay" id="form-modal">
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title" id="modal-title">Nuevo alumno</div>
-      <button class="btn btn-ghost btn-icon" onclick="closeFormModal()">
-        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
+      <button class="btn btn-ghost btn-icon" onclick="closeFormModal()"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
     <div class="modal-body">
       <div class="field-group" id="name-group">
@@ -293,10 +276,11 @@
         <label class="field-label" id="password-label">Contraseña</label>
         <input type="text" id="f-password" class="field-input" placeholder="Mínimo 6 caracteres">
       </div>
-      <div class="field-group" id="materia-group">
-        <label class="field-label">Materia</label>
-        <div class="materias-grid" id="materias-selector"></div>
-        <input type="text" id="f-materia-custom" class="field-input" placeholder="O escribe una nueva materia…" style="margin-top:8px;font-size:14px" oninput="syncCustomMateria()">
+      <div class="field-group">
+        <label class="field-label">Materias <span style="font-size:10px;color:var(--gray-400);text-transform:none;letter-spacing:0">(selecciona una o más)</span></label>
+        <div class="materias-selector" id="materias-selector"></div>
+        <input type="text" id="f-materia-custom" class="field-input" placeholder="+ Agregar materia nueva…" style="margin-top:8px;font-size:14px" onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomMateria()}">
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px">Presiona Enter para agregar una nueva materia</div>
       </div>
     </div>
     <div class="modal-footer">
@@ -309,7 +293,7 @@
   </div>
 </div>
 
-<!-- ── CONFIRM ELIMINAR ── -->
+<!-- CONFIRM -->
 <div class="confirm-overlay" id="confirm-overlay">
   <div class="confirm-box">
     <div class="confirm-icon">🗑️</div>
@@ -329,21 +313,19 @@
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, setPersistence, browserLocalPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getDatabase, ref, set, remove, onValue, update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// ════════════════════════════════════════════════════
+// ════════════════════════════════════════════
 // CONFIGURA ESTOS 3 VALORES
-// ════════════════════════════════════════════════════
+// ════════════════════════════════════════════
 const FIREBASE_API_KEY = "AIzaSyDIucPhIp0gSLPcmCUTYrY7CJx5LYBzCQU";
 const FIREBASE_APP_ID  = "1:548605948271:web:6d903b2432429d7a04b89a";
 const ADMIN_SECRET     = "blackai-masterpage-666-knowledge";
-// ════════════════════════════════════════════════════
+// ════════════════════════════════════════════
 
 const WORKER_URL = "https://milestones-auth.ulisesmf-inefable.workers.dev";
-
-// Materias predefinidas — agrega o quita según tus cursos
-const MATERIAS_DEFAULT = ["Hacking Ético","Informática","Pedagogía","Inglés","Matemáticas","Otro"];
+const MATERIAS_DEFAULT = ["Hacking Ético","Informática","Pedagogía","Inglés","Matemáticas","Programación","Redes","Otro"];
 
 const app = initializeApp({
   apiKey: FIREBASE_API_KEY,
@@ -356,26 +338,47 @@ const app = initializeApp({
 const auth = getAuth(app);
 const db   = getDatabase(app);
 
-let allStudents = [], editMode = false, editStudentId = null;
-let deleteStudentId = null, currentTeacherEmail = '';
-let activeMateria = '', selectedMateria = '';
+let allStudents=[], editMode=false, editStudentId=null;
+let deleteStudentId=null, currentTeacherEmail='';
+let activeMateria='', selectedMaterias=new Set();
 
 // Worker
-async function callWorker(body) {
-  const r = await fetch(WORKER_URL, {
-    method:'POST',
-    headers:{'Content-Type':'application/json','X-Admin-Secret':ADMIN_SECRET},
-    body:JSON.stringify(body)
-  });
+async function callWorker(body){
+  const r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json','X-Admin-Secret':ADMIN_SECRET},body:JSON.stringify(body)});
   return r.json();
 }
 
-// ── Auth ──
-onAuthStateChanged(auth, user => {
-  if (user) {
-    const email = user.email||'';
-    if (!email.endsWith('@master.blackai.com')) { toast('Solo docentes @master.blackai.com.','error'); signOut(auth); return; }
-    currentTeacherEmail = email;
+// Welcome sound via Web Speech API
+function playWelcome(){
+  if(!window.speechSynthesis) return;
+  const u=new SpeechSynthesisUtterance('Welcome to AI');
+  u.lang='en-US'; u.rate=.85; u.pitch=1; u.volume=.9;
+  const voices=speechSynthesis.getVoices();
+  const pref=voices.find(v=>v.lang==='en-US'&&(v.name.includes('Google')||v.name.includes('Samantha')||v.name.includes('Alex')))||voices.find(v=>v.lang==='en-US')||voices[0];
+  if(pref) u.voice=pref;
+  speechSynthesis.speak(u);
+}
+
+// Show welcome overlay then enter app
+function showWelcomeAndEnter(){
+  const ov=document.getElementById('welcome-overlay');
+  ov.classList.add('show');
+  // Load voices first (async in some browsers)
+  if(speechSynthesis.getVoices().length) playWelcome();
+  else speechSynthesis.addEventListener('voiceschanged',()=>playWelcome(),{once:true});
+  setTimeout(()=>{
+    ov.style.transition='opacity .6s ease';
+    ov.style.opacity='0';
+    setTimeout(()=>{ov.classList.remove('show');ov.style.opacity='';ov.style.transition='';},600);
+  },2200);
+}
+
+// Auth
+onAuthStateChanged(auth, user=>{
+  if(user){
+    const email=user.email||'';
+    if(!email.endsWith('@master.blackai.com')){toast('Solo docentes @master.blackai.com.','error');signOut(auth);return;}
+    currentTeacherEmail=email;
     document.getElementById('login-screen').style.display='none';
     document.getElementById('app-screen').style.display='block';
     document.getElementById('teacher-initials').textContent=email.split('@')[0].slice(0,2).toUpperCase();
@@ -387,36 +390,45 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-window.doLogin = async function() {
-  const user = document.getElementById('login-user').value.trim();
-  const pwd  = document.getElementById('login-password').value;
-  const err  = document.getElementById('login-error');
-  const btn  = document.getElementById('login-btn');
+window.doLogin=async function(){
+  const user=document.getElementById('login-user').value.trim();
+  const pwd=document.getElementById('login-password').value;
+  const remember=document.getElementById('remember-me').checked;
+  const err=document.getElementById('login-error');
+  const btn=document.getElementById('login-btn');
   err.style.display='none';
-  if (!user||!pwd) { err.style.display='block'; err.textContent='Completa todos los campos.'; return; }
-  const email = user.includes('@') ? user : `${user}@master.blackai.com`;
-  if (!email.endsWith('@master.blackai.com')) { err.style.display='block'; err.textContent='Solo cuentas @master.blackai.com.'; return; }
+  if(!user||!pwd){err.style.display='block';err.textContent='Completa todos los campos.';return;}
+  const email=user.includes('@')?user:`${user}@master.blackai.com`;
+  if(!email.endsWith('@master.blackai.com')){err.style.display='block';err.textContent='Solo cuentas @master.blackai.com.';return;}
   btn.disabled=true;
   document.getElementById('login-spinner').style.display='block';
   document.getElementById('login-label').textContent='Entrando...';
-  try { await signInWithEmailAndPassword(auth, email, pwd); }
-  catch(e) {
-    err.style.display='block'; err.textContent='Correo o contraseña incorrectos.';
+  try{
+    // Set persistence based on checkbox
+    await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
+    await signInWithEmailAndPassword(auth,email,pwd);
+    showWelcomeAndEnter();
+  }catch(e){
+    err.style.display='block';err.textContent='Correo o contraseña incorrectos.';
     btn.disabled=false;
     document.getElementById('login-spinner').style.display='none';
     document.getElementById('login-label').textContent='Iniciar sesión';
   }
 };
-window.doLogout = ()=>signOut(auth);
 
-// ── Load & render ──
-function loadStudents() {
-  onValue(ref(db,'students'), snap => {
+window.doLogout=async function(){
+  await signOut(auth);
+  // Clear session persistence on manual logout
+  document.getElementById('remember-me').checked=false;
+};
+
+// Load
+function loadStudents(){
+  onValue(ref(db,'students'),snap=>{
     document.getElementById('loading-state').style.display='none';
     allStudents=[];
-    if (snap.val()) {
-      for (const [uid,v] of Object.entries(snap.val())) allStudents.push({uid,...v});
-      allStudents.sort((a,b)=>(a.name||'').localeCompare(b.name||'','es'));
+    if(snap.val()){
+      for(const [uid,v] of Object.entries(snap.val())) allStudents.push({uid,...v});
     }
     document.getElementById('count-total').textContent=allStudents.length;
     buildMateriaFilters();
@@ -424,65 +436,88 @@ function loadStudents() {
   });
 }
 
-function buildMateriaFilters() {
-  const materias = [...new Set(allStudents.map(s=>s.materia||'').filter(Boolean))].sort();
-  const bar = document.getElementById('filter-bar');
-  // Keep first pill (Todas), rebuild rest
-  bar.innerHTML=`<span class="filter-label">Materia</span><button class="filter-pill${activeMateria===''?' active':''}" data-materia="" onclick="setMateriaFilter(this,'')">Todas</button>`;
-  materias.forEach(m => {
+function getMaterias(s){
+  // Support both array and legacy string
+  if(Array.isArray(s.materias)) return s.materias.filter(Boolean);
+  if(s.materia) return [s.materia];
+  return [];
+}
+
+function buildMateriaFilters(){
+  const set=new Set();
+  allStudents.forEach(s=>getMaterias(s).forEach(m=>set.add(m)));
+  const materias=[...set].sort();
+  const bar=document.getElementById('filter-bar');
+  if(!materias.length){bar.style.display='none';return;}
+  bar.style.display='flex';
+  bar.innerHTML=`<span class="filter-label">Materia</span><button class="filter-pill${activeMateria===''?' active':''}" onclick="setMateriaFilter(this,'')">Todas</button>`;
+  materias.forEach(m=>{
     const b=document.createElement('button');
     b.className='filter-pill'+(activeMateria===m?' active':'');
-    b.dataset.materia=m;
     b.textContent=m;
     b.onclick=()=>setMateriaFilter(b,m);
     bar.appendChild(b);
   });
-  if (!materias.length) bar.style.display='none';
-  else bar.style.display='flex';
 }
 
-window.setMateriaFilter = function(el, materia) {
-  activeMateria = materia;
+window.setMateriaFilter=function(el,m){
+  activeMateria=m;
   document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   applyFilters();
 };
 
-window.applyFilters = function() {
-  const q = document.getElementById('search-input').value.trim().toLowerCase();
-  let list = allStudents;
-  if (activeMateria) list = list.filter(s=>(s.materia||'')=== activeMateria);
-  if (q) list = list.filter(s=>
+window.applyFilters=function(){
+  const q=document.getElementById('search-input').value.trim().toLowerCase();
+  const sort=document.getElementById('sort-select').value;
+  let list=[...allStudents];
+
+  // Filter by materia
+  if(activeMateria) list=list.filter(s=>getMaterias(s).includes(activeMateria));
+
+  // Search
+  if(q) list=list.filter(s=>
     (s.name||'').toLowerCase().includes(q)||
     (s.username||'').toLowerCase().includes(q)||
     (s.email||'').toLowerCase().includes(q)||
-    (s.materia||'').toLowerCase().includes(q)
+    getMaterias(s).some(m=>m.toLowerCase().includes(q))||
+    (s.createdBy||'').toLowerCase().includes(q)
   );
-  const chip = document.getElementById('count-filtered-chip');
-  if (q||activeMateria) {
-    document.getElementById('count-filtered').textContent=list.length;
-    chip.style.display='flex';
-  } else { chip.style.display='none'; }
+
+  // Sort
+  list.sort((a,b)=>{
+    if(sort==='name') return (a.name||'').localeCompare(b.name||'','es');
+    if(sort==='name-desc') return (b.name||'').localeCompare(a.name||'','es');
+    if(sort==='recent') return (b.createdAt||0)-(a.createdAt||0);
+    if(sort==='oldest') return (a.createdAt||0)-(b.createdAt||0);
+    if(sort==='materias') return getMaterias(b).length-getMaterias(a).length;
+    return 0;
+  });
+
+  const chip=document.getElementById('count-filtered-chip');
+  if(q||activeMateria){document.getElementById('count-filtered').textContent=list.length;chip.style.display='flex';}
+  else chip.style.display='none';
   renderStudents(list);
 };
 
-function renderStudents(list) {
+function renderStudents(list){
   const grid=document.getElementById('students-grid');
   const empty=document.getElementById('empty-state');
   const q=document.getElementById('search-input').value.trim();
-  if (!list.length) {
-    grid.innerHTML=''; empty.style.display='block';
-    document.getElementById('empty-title').textContent = (q||activeMateria)?'Sin resultados':'Sin alumnos aún';
-    document.getElementById('empty-msg').textContent = (q||activeMateria)?'Prueba con otro término o materia':'Crea el primer alumno con el botón de arriba';
+  if(!list.length){
+    grid.innerHTML='';empty.style.display='block';
+    document.getElementById('empty-title').textContent=(q||activeMateria)?'Sin resultados':'Sin alumnos aún';
+    document.getElementById('empty-msg').textContent=(q||activeMateria)?'Prueba con otro término o materia':'Crea el primer alumno con el botón de arriba';
     return;
   }
   empty.style.display='none';
   grid.innerHTML=list.map((s,i)=>{
     const ini=(s.name||s.username||'?').slice(0,2).toUpperCase();
     const delay=Math.min(i*.04,.4);
-    const mat = s.materia
-      ? `<span class="materia-badge">${esc(s.materia)}</span>`
-      : `<span class="materia-badge no-materia">Sin materia</span>`;
+    const mats=getMaterias(s);
+    const matsHtml=mats.length
+      ? mats.map(m=>`<span class="mtag">${esc(m)}</span>`).join('')
+      : `<span class="mtag empty">Sin materia</span>`;
     return `<div class="student-card" style="animation-delay:${delay}s">
       <div class="card-top">
         <div class="student-avatar">${ini}</div>
@@ -491,7 +526,7 @@ function renderStudents(list) {
           <div class="student-email">${esc(s.email||'')}</div>
         </div>
       </div>
-      ${mat}
+      <div class="materias-tags">${matsHtml}</div>
       <div class="card-password">
         <span class="password-label">Pass</span>
         <span class="password-value">${esc(s.password||'—')}</span>
@@ -505,7 +540,7 @@ function renderStudents(list) {
           Editar
         </button>
         <button class="btn btn-danger" onclick="openConfirmDelete('${s.uid}','${escA(s.name||s.username||'')}')">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
           Eliminar
         </button>
       </div>
@@ -513,38 +548,45 @@ function renderStudents(list) {
   }).join('');
 }
 
-// ── Selector de materias en modal ──
-function buildMateriasSelector(currentVal) {
-  const existing = [...new Set(allStudents.map(s=>s.materia||'').filter(Boolean))];
-  const all = [...new Set([...MATERIAS_DEFAULT,...existing])];
-  const sel = document.getElementById('materias-selector');
+// Materias selector (multi-select)
+function buildMateriasSelector(currentMats=[]){
+  const existing=[...new Set(allStudents.flatMap(s=>getMaterias(s)))];
+  const all=[...new Set([...MATERIAS_DEFAULT,...existing])];
+  selectedMaterias=new Set(currentMats);
+  const sel=document.getElementById('materias-selector');
   sel.innerHTML='';
   all.forEach(m=>{
     const b=document.createElement('button');
-    b.type='button'; b.className='materia-btn'+(m===currentVal?' sel':'');
+    b.type='button';
+    b.className='msel-btn'+(selectedMaterias.has(m)?' sel':'');
     b.textContent=m;
     b.onclick=()=>{
-      document.querySelectorAll('.materia-btn').forEach(x=>x.classList.remove('sel'));
-      b.classList.add('sel');
-      selectedMateria=m;
-      document.getElementById('f-materia-custom').value='';
+      if(selectedMaterias.has(m)){selectedMaterias.delete(m);b.classList.remove('sel');}
+      else{selectedMaterias.add(m);b.classList.add('sel');}
     };
     sel.appendChild(b);
   });
-  selectedMateria = currentVal||'';
-  document.getElementById('f-materia-custom').value = (currentVal && !all.includes(currentVal)) ? currentVal : '';
 }
 
-window.syncCustomMateria = function() {
-  const v = document.getElementById('f-materia-custom').value.trim();
-  if (v) {
-    document.querySelectorAll('.materia-btn').forEach(x=>x.classList.remove('sel'));
-    selectedMateria=v;
-  }
+window.addCustomMateria=function(){
+  const inp=document.getElementById('f-materia-custom');
+  const v=inp.value.trim();
+  if(!v) return;
+  selectedMaterias.add(v);
+  // Add pill to selector
+  const sel=document.getElementById('materias-selector');
+  const existing=[...sel.querySelectorAll('.msel-btn')].find(b=>b.textContent===v);
+  if(!existing){
+    const b=document.createElement('button');
+    b.type='button'; b.className='msel-btn sel'; b.textContent=v;
+    b.onclick=()=>{if(selectedMaterias.has(v)){selectedMaterias.delete(v);b.classList.remove('sel');}else{selectedMaterias.add(v);b.classList.add('sel');}};
+    sel.appendChild(b);
+  } else {existing.classList.add('sel'); selectedMaterias.add(v);}
+  inp.value='';
 };
 
-// ── Modales ──
-window.openCreateModal = function() {
+// Modals
+window.openCreateModal=function(){
   editMode=false; editStudentId=null;
   document.getElementById('modal-title').textContent='Nuevo alumno';
   document.getElementById('form-submit-label').textContent='Crear alumno';
@@ -552,58 +594,58 @@ window.openCreateModal = function() {
   document.getElementById('f-name').value='';
   document.getElementById('f-username').value='';
   document.getElementById('f-password').value='';
+  document.getElementById('f-materia-custom').value='';
   document.getElementById('email-preview').textContent='';
   document.getElementById('name-group').style.display='block';
   document.getElementById('username-group').style.display='block';
-  document.getElementById('materia-group').style.display='block';
-  buildMateriasSelector('');
+  buildMateriasSelector([]);
   document.getElementById('form-modal').classList.add('open');
   setTimeout(()=>document.getElementById('f-name').focus(),100);
 };
 
-window.openEditModal = function(uid) {
+window.openEditModal=function(uid){
   const s=allStudents.find(x=>x.uid===uid); if(!s) return;
   editMode=true; editStudentId=uid;
   document.getElementById('modal-title').textContent='Editar alumno';
   document.getElementById('form-submit-label').textContent='Guardar';
   document.getElementById('password-label').textContent='Nueva contraseña (dejar vacío para no cambiar)';
   document.getElementById('f-password').value='';
+  document.getElementById('f-materia-custom').value='';
   document.getElementById('name-group').style.display='none';
   document.getElementById('username-group').style.display='none';
-  document.getElementById('materia-group').style.display='block';
-  buildMateriasSelector(s.materia||'');
+  buildMateriasSelector(getMaterias(s));
   document.getElementById('form-modal').classList.add('open');
   setTimeout(()=>document.getElementById('f-password').focus(),100);
 };
 
-window.closeFormModal = ()=>document.getElementById('form-modal').classList.remove('open');
-window.updateEmailPreview = function() {
+window.closeFormModal=()=>document.getElementById('form-modal').classList.remove('open');
+window.updateEmailPreview=function(){
   const u=document.getElementById('f-username').value.trim().toLowerCase().replace(/\s+/g,'');
-  document.getElementById('email-preview').textContent = u ? `→ ${u}@student.blackai.com` : '';
+  document.getElementById('email-preview').textContent=u?`→ ${u}@student.blackai.com`:'';
 };
 
-// ── Submit ──
-window.submitForm = async function() {
+// Submit
+window.submitForm=async function(){
   const btn=document.getElementById('form-submit-btn');
   const spinner=document.getElementById('form-spinner');
   const label=document.getElementById('form-submit-label');
-  const materia = document.getElementById('f-materia-custom').value.trim() || selectedMateria;
+  const mats=[...selectedMaterias];
 
-  if (editMode) {
+  if(editMode){
     const newPwd=document.getElementById('f-password').value.trim();
     btn.disabled=true; spinner.style.display='block'; label.textContent='Guardando...';
-    try {
-      const updates = { materia: materia||'' };
-      if (newPwd) {
-        if (newPwd.length<6) { toast('Contraseña mínimo 6 caracteres.','error'); btn.disabled=false; spinner.style.display='none'; label.textContent='Guardar'; return; }
+    try{
+      const updates={materias:mats};
+      if(newPwd){
+        if(newPwd.length<6){toast('Contraseña mínimo 6 caracteres.','error');btn.disabled=false;spinner.style.display='none';label.textContent='Guardar';return;}
         const r=await callWorker({action:'updatePassword',uid:editStudentId,newPassword:newPwd});
-        if (!r.ok) throw new Error(r.error||'Error en Auth');
+        if(!r.ok) throw new Error(r.error||'Error en Auth');
         updates.password=newPwd;
       }
       await update(ref(db,`students/${editStudentId}`),updates);
       toast('Alumno actualizado ✓','success');
       closeFormModal();
-    } catch(e){toast('Error: '+e.message,'error');}
+    }catch(e){toast('Error: '+e.message,'error');}
     btn.disabled=false; spinner.style.display='none'; label.textContent='Guardar';
     return;
   }
@@ -611,25 +653,25 @@ window.submitForm = async function() {
   const name=document.getElementById('f-name').value.trim();
   const username=document.getElementById('f-username').value.trim().toLowerCase().replace(/\s+/g,'');
   const password=document.getElementById('f-password').value.trim();
-  if (!name){toast('Ingresa el nombre.','error');return;}
-  if (!username){toast('Ingresa el usuario.','error');return;}
-  if (!password||password.length<6){toast('Contraseña mínimo 6 caracteres.','error');return;}
+  if(!name){toast('Ingresa el nombre.','error');return;}
+  if(!username){toast('Ingresa el usuario.','error');return;}
+  if(!password||password.length<6){toast('Contraseña mínimo 6 caracteres.','error');return;}
   const email=`${username}@student.blackai.com`;
-  if (allStudents.find(s=>s.email===email)){toast(`El usuario "${username}" ya existe.`,'error');return;}
+  if(allStudents.find(s=>s.email===email)){toast(`El usuario "${username}" ya existe.`,'error');return;}
 
   btn.disabled=true; spinner.style.display='block'; label.textContent='Creando...';
-  try {
+  try{
     const r=await callWorker({action:'create',email,password,displayName:name});
-    if (!r.ok) throw new Error(r.error||'Error en Auth');
+    if(!r.ok) throw new Error(r.error||'Error en Auth');
     await set(ref(db,`students/${r.uid}`),{
       name,username,email,password,
-      materia:materia||'',
+      materias:mats,
       createdAt:Date.now(),
       createdBy:currentTeacherEmail
     });
     toast(`Alumno "${name}" creado ✓`,'success');
     closeFormModal();
-  } catch(e){
+  }catch(e){
     let msg=e.message;
     if(msg.includes('EMAIL_EXISTS')||msg.includes('email-already-in-use')) msg='Este correo ya está en uso.';
     toast('Error: '+msg,'error');
@@ -637,18 +679,14 @@ window.submitForm = async function() {
   btn.disabled=false; spinner.style.display='none'; label.textContent='Crear alumno';
 };
 
-// ── Eliminar ──
 window.openConfirmDelete=function(uid,name){
   deleteStudentId=uid;
   document.getElementById('confirm-msg').textContent=`Se eliminará a "${name}" de Firebase Auth y la base de datos. No se puede deshacer.`;
   document.getElementById('confirm-overlay').classList.add('open');
 };
-window.closeConfirm=function(){
-  document.getElementById('confirm-overlay').classList.remove('open');
-  deleteStudentId=null;
-};
+window.closeConfirm=function(){document.getElementById('confirm-overlay').classList.remove('open');deleteStudentId=null;};
 window.confirmDelete=async function(){
-  if(!deleteStudentId)return;
+  if(!deleteStudentId) return;
   const btn=document.getElementById('confirm-ok-btn');
   const spinner=document.getElementById('confirm-spinner');
   const label=document.getElementById('confirm-label');
@@ -663,7 +701,6 @@ window.confirmDelete=async function(){
   btn.disabled=false; spinner.style.display='none'; label.textContent='Eliminar';
 };
 
-// ── Copy ──
 window.copyPwd=async function(pwd){
   if(!pwd){toast('Sin contraseña guardada','info');return;}
   try{await navigator.clipboard.writeText(pwd);}
@@ -671,7 +708,6 @@ window.copyPwd=async function(pwd){
   toast('Contraseña copiada ✓','info');
 };
 
-// ── Toast ──
 window.toast=function(msg,type='success'){
   const c=document.getElementById('toast-container');
   const el=document.createElement('div');
@@ -683,110 +719,52 @@ window.toast=function(msg,type='success'){
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function escA(s){return String(s).replace(/'/g,"\\'");}
-
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeFormModal();closeConfirm();}});
-document.getElementById('f-password').addEventListener('keydown',e=>{if(e.key==='Enter')window.submitForm();});
+document.getElementById('f-password').addEventListener('keydown',e=>{if(e.key==='Enter') window.submitForm();});
 </script>
+
 <script>
-// ── Particle background (login screen only) ──
+// ── Fog background ──
 (function(){
-  const canvas = document.getElementById('particle-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [], mouse = {x:-999,y:-999};
+  const canvas=document.getElementById('fog-canvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let W,H,t=0;
+  const blobs=[];
 
-  function resize(){
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
 
-  function Particle(){
-    this.reset = function(){
-      this.x  = Math.random()*W;
-      this.y  = Math.random()*H;
-      this.r  = Math.random()*1.6+.3;
-      this.vx = (Math.random()-.5)*.25;
-      this.vy = (Math.random()-.5)*.25;
-      this.alpha = Math.random()*.55+.1;
-      this.pulse = Math.random()*Math.PI*2;
-      this.pulseSpeed = .008+Math.random()*.012;
-    };
-    this.reset();
-  }
-
-  function init(){
-    resize();
-    particles = [];
-    const count = Math.min(Math.floor((W*H)/7000),160);
-    for(let i=0;i<count;i++) particles.push(new Particle());
+  function initBlobs(){
+    blobs.length=0;
+    for(let i=0;i<7;i++) blobs.push({
+      x:Math.random()*W, y:Math.random()*H,
+      r:80+Math.random()*100,
+      vx:(Math.random()-.5)*.25,
+      vy:(Math.random()-.5)*.18,
+      ph:Math.random()*Math.PI*2,
+      speed:.012+Math.random()*.01
+    });
   }
 
   function draw(){
     ctx.clearRect(0,0,W,H);
-
-    // Subtle radial glow center
-    const grad = ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.6);
-    grad.addColorStop(0,'rgba(0,0,0,.025)');
-    grad.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=grad;
-    ctx.fillRect(0,0,W,H);
-
-    particles.forEach(p=>{
-      p.pulse += p.pulseSpeed;
-      const a = p.alpha*(0.7+0.3*Math.sin(p.pulse));
-
-      // Mouse repulsion
-      const dx=p.x-mouse.x, dy=p.y-mouse.y;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-      if(dist<90){
-        const force=(90-dist)/90;
-        p.x+=dx/dist*force*1.2;
-        p.y+=dy/dist*force*1.2;
-      }
-
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<-10)p.x=W+10;
-      if(p.x>W+10)p.x=-10;
-      if(p.y<-10)p.y=H+10;
-      if(p.y>H+10)p.y=-10;
-
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=`rgba(0,0,0,${a})`;
-      ctx.fill();
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,W,H);
+    blobs.forEach(b=>{
+      b.x+=b.vx; b.y+=b.vy; b.ph+=b.speed;
+      if(b.x<-b.r)b.x=W+b.r; if(b.x>W+b.r)b.x=-b.r;
+      if(b.y<-b.r)b.y=H+b.r; if(b.y>H+b.r)b.y=-b.r;
+      const a=.045+.02*Math.sin(b.ph);
+      const g=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+      g.addColorStop(0,`rgba(0,0,0,${a})`);
+      g.addColorStop(.6,`rgba(0,0,0,${a*.3})`);
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2); ctx.fill();
     });
-
-    // Draw lines between nearby particles
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=particles[i].x-particles[j].x;
-        const dy=particles[i].y-particles[j].y;
-        const d=Math.sqrt(dx*dx+dy*dy);
-        if(d<100){
-          ctx.beginPath();
-          ctx.strokeStyle=`rgba(0,0,0,${.06*(1-d/100)})`;
-          ctx.lineWidth=.5;
-          ctx.moveTo(particles[i].x,particles[i].y);
-          ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(draw);
+    t++; requestAnimationFrame(draw);
   }
 
-  const loginScreen = document.getElementById('login-screen');
-  loginScreen.addEventListener('mousemove',e=>{
-    const r=canvas.getBoundingClientRect();
-    mouse.x=e.clientX-r.left;
-    mouse.y=e.clientY-r.top;
-  });
-  loginScreen.addEventListener('mouseleave',()=>{mouse.x=-999;mouse.y=-999;});
-
-  window.addEventListener('resize',init);
-  init();
-  draw();
+  window.addEventListener('resize',()=>{resize();initBlobs();});
+  resize(); initBlobs(); draw();
 })();
 </script>
 </body>
