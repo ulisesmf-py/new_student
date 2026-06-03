@@ -137,6 +137,78 @@
   .toast-error{background:var(--danger);color:var(--white)}
   .toast-info{background:var(--gray-700);color:var(--white)}
   .toast.hide{animation:slideOutRight .3s ease both}
+  /* ── TABS ── */
+  .tab-nav{display:flex;gap:4px;padding:0 32px;background:var(--white);border-bottom:1px solid var(--gray-200)}
+  .tab-btn{padding:14px 20px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--gray-500);background:none;border:none;border-bottom:2.5px solid transparent;cursor:pointer;transition:all var(--t);white-space:nowrap;display:flex;align-items:center;gap:7px}
+  .tab-btn:hover{color:var(--black)}
+  .tab-btn.active{color:var(--black);border-bottom-color:var(--black);font-weight:600}
+  .tab-pane{display:none}.tab-pane.active{display:block}
+
+  /* ── CALIFICACIONES TAB ── */
+  .grades-layout{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+  @media(max-width:900px){.grades-layout{grid-template-columns:1fr}}
+  .grades-search-bar{position:relative;margin-bottom:16px}
+  .grades-search-bar input{width:100%;padding:10px 16px 10px 40px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color var(--t)}
+  .grades-search-bar input:focus{border-color:var(--black)}
+  .grades-search-bar svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--gray-400);pointer-events:none}
+  .grades-table{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden}
+  .grades-table-header{display:grid;grid-template-columns:1fr 80px 80px 80px 80px 56px;gap:0;padding:10px 16px;background:var(--gray-50);border-bottom:1px solid var(--gray-200)}
+  .grades-th{font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em}
+  .grades-row{display:grid;grid-template-columns:1fr 80px 80px 80px 80px 56px;gap:0;padding:12px 16px;border-bottom:1px solid var(--gray-100);align-items:center;cursor:pointer;transition:background var(--t)}
+  .grades-row:last-child{border-bottom:none}
+  .grades-row:hover{background:var(--gray-50)}
+  .grades-row.selected{background:#f0f9f6;border-left:3px solid #1D9E75}
+  .grade-cell{font-size:13px;color:var(--gray-700);text-align:center}
+  .grade-pill{display:inline-flex;align-items:center;justify-content:center;width:38px;height:24px;border-radius:6px;font-size:12px;font-weight:700}
+  .grade-pill.high{background:#f0fdf4;color:#166534}
+  .grade-pill.mid{background:#fefce8;color:#854d0e}
+  .grade-pill.low{background:#fef2f2;color:#991b1b}
+  .grade-pill.none{background:var(--gray-100);color:var(--gray-400);font-weight:400;font-size:11px}
+  .grade-avg{font-size:14px;font-weight:700;color:var(--black)}
+
+  /* Detail panel */
+  .detail-panel{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;position:sticky;top:84px}
+  .detail-empty{padding:60px 20px;text-align:center;color:var(--gray-400)}
+  .detail-empty svg{margin-bottom:12px;opacity:.3}
+  .detail-header{padding:20px;border-bottom:1px solid var(--gray-100);display:flex;align-items:center;gap:12px}
+  .detail-avatar{width:44px;height:44px;background:var(--black);color:var(--white);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0}
+  .detail-name{font-size:15px;font-weight:700;letter-spacing:-.2px}
+  .detail-email{font-size:11px;color:var(--gray-400);font-family:'DM Mono',monospace;margin-top:2px}
+  .detail-body{padding:16px}
+  .detail-materia{margin-bottom:16px}
+  .detail-materia-title{font-size:12px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .detail-materia-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .parcial-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .parcial-label{font-size:12px;color:var(--gray-500);width:64px;flex-shrink:0}
+  .parcial-bar-wrap{flex:1;height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden}
+  .parcial-bar{height:100%;border-radius:4px;transition:width .6s ease}
+  .parcial-score{font-size:12px;font-weight:700;color:var(--black);width:28px;text-align:right;flex-shrink:0}
+  .parcial-score.none{color:var(--gray-400);font-weight:400}
+  .detail-avg-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--gray-50);border-radius:var(--radius-xs);margin-top:4px}
+  .detail-avg-label{font-size:12px;color:var(--gray-500)}
+  .detail-avg-val{font-size:15px;font-weight:700;color:var(--black)}
+  .no-grades-msg{font-size:12px;color:var(--gray-400);font-style:italic;padding:8px 0}
+
+  /* ── REPORTES TAB ── */
+  .reports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:28px}
+  .report-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px}
+  .report-card-title{font-size:13px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .report-card-val{font-size:32px;font-weight:700;letter-spacing:-1px;color:var(--black)}
+  .report-card-sub{font-size:13px;color:var(--gray-500);margin-top:2px}
+  .report-materia-section{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+  .report-materia-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .report-materia-name{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .report-materia-avg{font-size:22px;font-weight:700}
+  .report-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .report-bar-name{font-size:13px;color:var(--gray-600);width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+  .report-bar-outer{flex:1;height:10px;background:var(--gray-100);border-radius:5px;overflow:hidden}
+  .report-bar-inner{height:100%;border-radius:5px;transition:width .8s ease}
+  .report-bar-score{font-size:12px;font-weight:700;color:var(--black);width:30px;text-align:right;flex-shrink:0}
+  .risk-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600}
+  .risk-high{background:#fef2f2;color:#991b1b}
+  .risk-mid{background:#fefce8;color:#854d0e}
+  .risk-ok{background:#f0fdf4;color:#166534}
+
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes scaleUp{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
   @keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
@@ -208,6 +280,25 @@
       <button class="btn-logout" onclick="doLogout()">Salir</button>
     </div>
   </header>
+
+  <!-- TAB NAV -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" id="tab-alumnos" onclick="switchTab('alumnos')">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Alumnos
+    </button>
+    <button class="tab-btn" id="tab-grades" onclick="switchTab('grades')">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Calificaciones
+    </button>
+    <button class="tab-btn" id="tab-reports" onclick="switchTab('reports')">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2M7 12h10M13 8h4"/></svg>
+      Reportes
+    </button>
+  </nav>
+
+  <!-- TAB 1: ALUMNOS -->
+  <div id="pane-alumnos" class="tab-pane active">
   <main class="main">
     <div class="topbar">
       <div class="topbar-left">
@@ -250,7 +341,84 @@
     <div id="empty-state" class="empty-state"><div style="font-size:44px;margin-bottom:14px;opacity:.35">👥</div><h3 id="empty-title">Sin alumnos aún</h3><p id="empty-msg">Crea el primer alumno con el botón de arriba</p></div>
     <div id="students-grid" class="students-grid"></div>
   </main>
-</div>
+  </div><!-- end pane-alumnos -->
+
+  <!-- TAB 2: CALIFICACIONES -->
+  <div id="pane-grades" class="tab-pane">
+  <main class="main">
+    <div class="topbar" style="margin-bottom:20px">
+      <div class="topbar-left">
+        <h1>Calificaciones</h1>
+        <p>Resumen de rendimiento por alumno y materia</p>
+      </div>
+      <div class="topbar-right">
+        <select class="sort-select" id="grades-parcial-filter" onchange="renderGradesTab()">
+          <option value="all">Todos los parciales</option>
+          <option value="parcial1">Parcial 1</option>
+          <option value="parcial2">Parcial 2</option>
+          <option value="parcial3">Parcial 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="grades-layout">
+      <!-- Table -->
+      <div>
+        <div class="grades-search-bar">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="grades-search" placeholder="Buscar alumno…" oninput="renderGradesTab()">
+        </div>
+        <div class="grades-table">
+          <div class="grades-table-header">
+            <div class="grades-th">Alumno</div>
+            <div class="grades-th" style="text-align:center">Inglés</div>
+            <div class="grades-th" style="text-align:center">Informática</div>
+            <div class="grades-th" style="text-align:center">Pedagogía</div>
+            <div class="grades-th" style="text-align:center">Hacking</div>
+            <div class="grades-th" style="text-align:center">Prom.</div>
+          </div>
+          <div id="grades-rows">
+            <div style="padding:40px;text-align:center;color:var(--gray-400);font-size:14px">Cargando…</div>
+          </div>
+        </div>
+      </div>
+      <!-- Detail panel -->
+      <div class="detail-panel" id="detail-panel">
+        <div class="detail-empty">
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <div style="font-size:14px;font-weight:600;color:var(--gray-500);margin-bottom:6px">Selecciona un alumno</div>
+          <div style="font-size:13px">para ver el detalle por parcial</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div><!-- end pane-grades -->
+
+  <!-- TAB 3: REPORTES -->
+  <div id="pane-reports" class="tab-pane">
+  <main class="main">
+    <div class="topbar" style="margin-bottom:24px">
+      <div class="topbar-left">
+        <h1>Reportes</h1>
+        <p>Estadísticas generales del grupo</p>
+      </div>
+      <div class="topbar-right">
+        <select class="sort-select" id="report-parcial-filter" onchange="renderReportsTab()">
+          <option value="all">Todos los parciales</option>
+          <option value="parcial1">Parcial 1</option>
+          <option value="parcial2">Parcial 2</option>
+          <option value="parcial3">Parcial 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="reports-grid" id="report-summary-cards">
+      <div class="report-card"><div class="report-card-title">Total alumnos</div><div class="report-card-val" id="rep-total">—</div></div>
+      <div class="report-card"><div class="report-card-title">Promedio general</div><div class="report-card-val" id="rep-avg">—</div><div class="report-card-sub">todas las materias</div></div>
+      <div class="report-card"><div class="report-card-title">Alumnos en riesgo</div><div class="report-card-val" id="rep-risk" style="color:var(--danger)">—</div><div class="report-card-sub">score &lt; 60</div></div>
+      <div class="report-card"><div class="report-card-title">Sin calificación</div><div class="report-card-val" id="rep-empty">—</div><div class="report-card-sub">alumnos sin datos</div></div>
+    </div>
+    <div id="report-materias"></div>
+  </main>
+  </div><!-- end pane-reports -->
 
 <!-- MODAL -->
 <div class="modal-overlay" id="form-modal">
@@ -319,9 +487,9 @@ import { getDatabase, ref, set, remove, onValue, update } from "https://www.gsta
 // ════════════════════════════════════════════
 // CONFIGURA ESTOS 3 VALORES
 // ════════════════════════════════════════════
-const FIREBASE_API_KEY = "AIzaSyDIucPhIp0gSLPcmCUTYrY7CJx5LYBzCQU";
-const FIREBASE_APP_ID  = "1:548605948271:web:6d903b2432429d7a04b89a";
-const ADMIN_SECRET     = "blackai-masterpage-666-knowledge";
+const FIREBASE_API_KEY = "TU_API_KEY";
+const FIREBASE_APP_ID  = "TU_APP_ID";
+const ADMIN_SECRET     = "TU_ADMIN_SECRET";
 // ════════════════════════════════════════════
 
 const WORKER_URL = "https://milestones-auth.ulisesmf-inefable.workers.dev";
@@ -384,6 +552,7 @@ onAuthStateChanged(auth, user=>{
     document.getElementById('teacher-initials').textContent=email.split('@')[0].slice(0,2).toUpperCase();
     document.getElementById('teacher-email-display').textContent=email;
     loadStudents();
+    loadGrades();
   } else {
     document.getElementById('login-screen').style.display='flex';
     document.getElementById('app-screen').style.display='none';
@@ -721,6 +890,219 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 function escA(s){return String(s).replace(/'/g,"\\'");}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeFormModal();closeConfirm();}});
 document.getElementById('f-password').addEventListener('keydown',e=>{if(e.key==='Enter') window.submitForm();});
+
+// ── TABS ─────────────────────────────────────────────────────
+window.switchTab = function(tab){
+  ['alumnos','grades','reports'].forEach(t=>{
+    document.getElementById('pane-'+t).classList.toggle('active', t===tab);
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+  });
+  if(tab==='grades') renderGradesTab();
+  if(tab==='reports') renderReportsTab();
+};
+
+// ── GRADES DATA ───────────────────────────────────────────────
+let allGrades = {};
+let selectedGradeUid = null;
+
+const MATERIAS_KEYS = [
+  { key:'inglés',      label:'Inglés',       color:'#534AB7' },
+  { key:'informática', label:'Informática',  color:'#185FA5' },
+  { key:'pedagogía',   label:'Pedagogía',    color:'#993C1D' },
+  { key:'hacking ético', label:'Hacking',    color:'#BA7517' },
+];
+
+function loadGrades(){
+  onValue(ref(db,'grades'), snap=>{
+    allGrades = snap.val() || {};
+    if(document.getElementById('pane-grades').classList.contains('active')) renderGradesTab();
+    if(document.getElementById('pane-reports').classList.contains('active')) renderReportsTab();
+  });
+}
+
+function getParcialFilter(){
+  return document.getElementById('grades-parcial-filter')?.value || 'all';
+}
+
+function getScoreForMateria(uid, materiaKey, parcialFilter){
+  const mData = allGrades?.[uid]?.[materiaKey];
+  if(!mData) return null;
+  if(parcialFilter === 'all'){
+    // Average all parciales that exist
+    const vals = ['parcial1','parcial2','parcial3']
+      .map(p => mData[p]?.score)
+      .filter(v => v !== undefined && v !== null);
+    if(!vals.length) return mData.score ?? null; // fallback to direct score
+    return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+  }
+  return mData[parcialFilter]?.score ?? null;
+}
+
+function gradePillHtml(score){
+  if(score===null) return `<span class="grade-pill none">—</span>`;
+  const cls = score>=70?'high':score>=60?'mid':'low';
+  return `<span class="grade-pill ${cls}">${score}</span>`;
+}
+
+window.renderGradesTab = function(){
+  const q = (document.getElementById('grades-search')?.value||'').trim().toLowerCase();
+  const parcial = getParcialFilter();
+  let list = allStudents.filter(s=>
+    !q ||
+    (s.name||'').toLowerCase().includes(q) ||
+    (s.username||'').toLowerCase().includes(q)
+  );
+
+  const rows = document.getElementById('grades-rows');
+  if(!list.length){ rows.innerHTML=`<div style="padding:40px;text-align:center;color:var(--gray-400);font-size:14px">Sin alumnos</div>`; return; }
+
+  rows.innerHTML = list.map(s=>{
+    const scores = MATERIAS_KEYS.map(m=>getScoreForMateria(s.uid, m.key, parcial));
+    const validScores = scores.filter(v=>v!==null);
+    const avg = validScores.length ? Math.round(validScores.reduce((a,b)=>a+b,0)/validScores.length) : null;
+    const ini = (s.name||s.username||'?').slice(0,2).toUpperCase();
+    const sel = selectedGradeUid===s.uid ? ' selected' : '';
+    return `<div class="grades-row${sel}" onclick="selectGradeStudent('${s.uid}')">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;background:var(--black);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">${ini}</div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--black)">${esc(s.name||s.username||'—')}</div>
+          <div style="font-size:11px;color:var(--gray-400)">${esc(s.username||'')}</div>
+        </div>
+      </div>
+      ${scores.map(sc=>gradePillHtml(sc)).map(h=>`<div class="grade-cell">${h}</div>`).join('')}
+      <div class="grade-cell"><span class="grade-avg">${avg!==null?avg:'—'}</span></div>
+    </div>`;
+  }).join('');
+};
+
+window.selectGradeStudent = function(uid){
+  selectedGradeUid = uid;
+  renderGradesTab(); // re-render to highlight row
+  const s = allStudents.find(x=>x.uid===uid);
+  if(!s) return;
+  const panel = document.getElementById('detail-panel');
+  const ini = (s.name||s.username||'?').slice(0,2).toUpperCase();
+  const parcial = getParcialFilter();
+
+  const materiasHtml = MATERIAS_KEYS.map(m=>{
+    const mData = allGrades?.[uid]?.[m.key];
+    const parciales = ['parcial1','parcial2','parcial3'];
+
+    const parcialesHtml = parciales.map((p,i)=>{
+      const sc = mData?.[p]?.score ?? null;
+      const barW = sc !== null ? sc : 0;
+      const barColor = m.color;
+      const scoreHtml = sc!==null
+        ? `<span class="parcial-score">${sc}</span>`
+        : `<span class="parcial-score none">—</span>`;
+      // Only show selected parcial or all
+      if(parcial !== 'all' && parcial !== p) return '';
+      return `<div class="parcial-row">
+        <span class="parcial-label">Parcial ${i+1}</span>
+        <div class="parcial-bar-wrap"><div class="parcial-bar" style="width:${barW}%;background:${barColor}"></div></div>
+        ${scoreHtml}
+      </div>`;
+    }).join('');
+
+    const vals = parciales.map(p=>mData?.[p]?.score).filter(v=>v!==undefined&&v!==null);
+    const avg = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : null;
+
+    const hasAny = mData && (mData.score !== undefined || vals.length > 0);
+
+    return `<div class="detail-materia">
+      <div class="detail-materia-title">
+        <div class="detail-materia-dot" style="background:${m.color}"></div>
+        ${m.label}
+      </div>
+      ${hasAny ? `
+        ${parcialesHtml}
+        ${avg!==null?`<div class="detail-avg-row"><span class="detail-avg-label">Promedio</span><span class="detail-avg-val">${avg}</span></div>`:''}
+      ` : `<div class="no-grades-msg">Sin calificaciones registradas</div>`}
+    </div>`;
+  }).join('');
+
+  panel.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-avatar">${ini}</div>
+      <div>
+        <div class="detail-name">${esc(s.name||s.username||'Sin nombre')}</div>
+        <div class="detail-email">${esc(s.email||'')}</div>
+      </div>
+    </div>
+    <div class="detail-body">${materiasHtml}</div>`;
+};
+
+// ── REPORTS ───────────────────────────────────────────────────
+window.renderReportsTab = function(){
+  const parcial = document.getElementById('report-parcial-filter')?.value || 'all';
+  const total = allStudents.length;
+
+  // Gather all scores
+  let allScores = [];
+  let riskCount = 0;
+  let emptyCount = 0;
+
+  allStudents.forEach(s=>{
+    const scores = MATERIAS_KEYS.map(m=>getScoreForMateriaReport(s.uid,m.key,parcial)).filter(v=>v!==null);
+    if(!scores.length) emptyCount++;
+    else {
+      const avg = scores.reduce((a,b)=>a+b,0)/scores.length;
+      allScores.push(avg);
+      if(avg < 60) riskCount++;
+    }
+  });
+
+  const overallAvg = allScores.length ? (allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(1) : '—';
+
+  document.getElementById('rep-total').textContent = total;
+  document.getElementById('rep-avg').textContent = overallAvg;
+  document.getElementById('rep-risk').textContent = riskCount;
+  document.getElementById('rep-empty').textContent = emptyCount;
+
+  // Per-materia sections
+  const container = document.getElementById('report-materias');
+  container.innerHTML = MATERIAS_KEYS.map(m=>{
+    const rows = allStudents.map(s=>({
+      name: s.name||s.username||'—',
+      score: getScoreForMateriaReport(s.uid, m.key, parcial)
+    })).filter(r=>r.score!==null).sort((a,b)=>b.score-a.score);
+
+    if(!rows.length) return `<div class="report-materia-section">
+      <div class="report-materia-header">
+        <div class="report-materia-name"><div style="width:10px;height:10px;border-radius:50%;background:${m.color}"></div>${m.label}</div>
+        <div class="report-materia-avg" style="color:var(--gray-400)">—</div>
+      </div>
+      <div style="font-size:13px;color:var(--gray-400);font-style:italic">Sin calificaciones registradas</div>
+    </div>`;
+
+    const avg = (rows.reduce((a,r)=>a+r.score,0)/rows.length).toFixed(1);
+    const avgColor = avg>=70?'#166534':avg>=60?'#854d0e':'#991b1b';
+
+    const barsHtml = rows.map(r=>{
+      const riskCls = r.score>=70?'risk-ok':r.score>=60?'risk-mid':'risk-high';
+      return `<div class="report-bar-row">
+        <div class="report-bar-name">${esc(r.name)}</div>
+        <div class="report-bar-outer"><div class="report-bar-inner" style="width:${r.score}%;background:${m.color}"></div></div>
+        <div class="report-bar-score">${r.score}</div>
+        <span class="risk-badge ${riskCls}" style="margin-left:6px">${r.score>=70?'✓':r.score>=60?'~':'!'}</span>
+      </div>`;
+    }).join('');
+
+    return `<div class="report-materia-section">
+      <div class="report-materia-header">
+        <div class="report-materia-name"><div style="width:10px;height:10px;border-radius:50%;background:${m.color}"></div>${m.label}</div>
+        <div class="report-materia-avg" style="color:${avgColor}">${avg}</div>
+      </div>
+      ${barsHtml}
+    </div>`;
+  }).join('');
+};
+
+function getScoreForMateriaReport(uid, materiaKey, parcialFilter){
+  return getScoreForMateria(uid, materiaKey, parcialFilter);
+}
+
 </script>
 
 <script>
